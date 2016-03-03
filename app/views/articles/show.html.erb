@@ -1,34 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-   <%= render 'header' %>
-  </head>
+<%= render 'header' %>
 
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12">
-
-			<h1>Title:
-  				<%= @article.title %>
-			</h1>
-			<p>
-  				<b>Text:</b>
-  				<%= @article.text %>
-			</p>
-		</div>
-	</div>
-	<div class="row">
-	<div class="col-xs-12">
-		<b>Comments</b><br><br>
-		<%= render @article.comments %>
-
-		<b>Add a comment:</b><br><br>
-		<%= render 'comments/form' %>
-	</div>
-	</div>
-	
-	<%= link_to 'Edit', edit_article_path(@article) %> |
-	<%= link_to 'Back', articles_path %>
+	<div class="col-md-12">
+<br><br>
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+ 
+<p><b>Comments</b></p>
+<%= render @article.comments %>
+ 
+<p><b>Add a comment:</b></p>
+<%= render 'comments/form' %>
 
 </div>
-</html>
+	
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+</div>
