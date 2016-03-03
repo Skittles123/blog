@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <%= render 'header' %>
+  </head>
+
+  <div class="container-fluid"><div class="col-xs-12">
+    <h1>List of articles</h1>
+
+    <%= link_to 'New article', new_article_path, class: "btn btn-primary" %>
+    <br><br>
+
+    <div class="row">
+      <table class="table">
+        <tr>
+          <th>Title</th>
+          <th>Text</th>
+          <th colspan="3"></th>
+        </tr>
+       
+        <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text %></td>
+          <td><%= link_to 'Show', article_path(article), class: "btn btn-default" %></td>
+          <td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-default"%></td>
+          <td><%= link_to 'Destroy', article_path(article),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' }, class: "btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div></div>
+</html>
